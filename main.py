@@ -2,6 +2,11 @@
 # 12 sunny
 
 # 6:40
+<<<<<<< HEAD
+=======
+
+#ali is donkey
+>>>>>>> 6f4830eb45fa85d9aa976973ed8beeade5cd68ed
 
 try:
     x = float(input("Write the lunar day to show the approximate time of moonrise: "))
