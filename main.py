@@ -3,8 +3,6 @@
 
 # 6:40
 
-#dani khar
-
 x = float(input("Write the lunar day to show the approximate time of moonrise: "))
 try:
 
