@@ -1,7 +1,7 @@
 import json
 
-moonPhaseJson = open("./moonPhase.json")
-moonPhase = json.load(moonPhaseJson)
+moonPhasesJson = open("./moonPhase.json")
+moonPhases = json.load(moonPhasesJson)
 lunarDay = float(input("Write the lunar day to show the approximate time of moonrise: "))
 # 14 lunar day
 # 13 sunny
