@@ -1,4 +1,2 @@
-
-skyobjects/moon/__pycache__/moon.cpython-311.pyc
-skyobjects/sun/__pycache__/sun.cpython-311.pyc
 .vscode/settings.json
+*__pycache__
