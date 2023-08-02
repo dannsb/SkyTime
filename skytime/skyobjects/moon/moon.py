@@ -11,15 +11,15 @@ def getLunarDay(timestamp):
         print(err)
 
 
-def moonPhase(lunarDay):
+def getMoonPhase(lunarDay):
     moonPhasesJson = open("./moonphases.json")
     moonPhases = json.load(moonPhasesJson)
     pass
 
 
-def moonRise():
+def getMoonRise():
     pass
 
 
-def moonSet():
+def getMoonSet():
     pass
