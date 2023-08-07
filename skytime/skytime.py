@@ -1,8 +1,8 @@
-from skyobjects.moon import moon
-from skyobjects.solar_time import SolarTime
+from modules.lunar_time import LunarTime
+from modules.solar_time import SolarTime
 from time import sleep
 from persiantools.jdatetime import JalaliDate
-from date_helper import jalaliToTimestamp, getDayOfYear
+from date_helper import getDayOfYear, jalaliToGregorian, gregorianToLunarDay
 from banner.banner import printBanner
 
 
@@ -22,15 +22,18 @@ class main:
             printBanner()
             userDate = self.getUserDate()
             year, month, day = map(int, userDate.split("/"))
-
-            timestamp = jalaliToTimestamp(year, month, day)
-            lunarDate = moon.getLunarDay(timestamp)
+            gregorianDate = jalaliToGregorian(year, month, day)
+            lunarDate = gregorianToLunarDay(
+                gregorianDate.year, gregorianDate.month, gregorianDate.day
+            )
 
             dayOfYear = getDayOfYear(month, day)
             solar = SolarTime(29.5916, 52.5839)  # latiude and longitude of shiraz
             solar.calculate()
             sunRiseTime = solar.getSunRise()
             sunSetTime = solar.getSunSet()
+            lunar = LunarTime(lunarDate)
+            moonPhase = lunar.getMoonPhase()
 
             print(
                 f"""
