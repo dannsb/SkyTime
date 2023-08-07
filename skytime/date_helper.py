@@ -1,5 +1,6 @@
 from persiantools.jdatetime import JalaliDate
 from datetime import datetime
+from ummalqura.hijri_date import HijriDate
 
 
 def getDayOfYear(month, day, dateType="persian"):
@@ -8,9 +9,13 @@ def getDayOfYear(month, day, dateType="persian"):
     return day_of_year
 
 
-def jalaliToTimestamp(year, month, day):
-    jalilFormat = JalaliDate(year, month, day)
-    gregorianDate = JalaliDate.to_gregorian(jalilFormat)
-    dateFormat = datetime(gregorianDate.year, gregorianDate.month, gregorianDate.day)
-    timestamp = int(datetime.timestamp(dateFormat))
-    return timestamp
+def jalaliToGregorian(year, month, day):
+    return JalaliDate(year, month, day).to_gregorian()
+
+
+def gregorianToLunarDay(year,month,day):
+    lunarDate = HijriDate(year, month, day, gr=True)
+    lunarDate = (
+        str(lunarDate.year) + "/" + str(lunarDate.month) + "/" + str(lunarDate.day)
+    )
+    return lunarDate
