@@ -3,3 +3,4 @@ ephem
 pyephem
 persiantools
 pytz
+ummalqura
