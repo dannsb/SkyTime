@@ -1,2 +1,5 @@
 progress
 ephem
+pyephem
+persiantools
+pytz
